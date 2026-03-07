@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Finnish Vocabulary Randomizer</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Finnish Vocabulary Randomizer</h1>
+<p class="subtitle">Click the buttons to generate words for Finnish speaking practice.</p>
+
+<div class="container">
+
+<!-- RED -->
+
+<div class="box red">
+
+<h2>Random Hard Difficulty Words</h2>
+
+<div class="row">
+<button onclick="generate(red_nouns,'red_noun')">Nouns</button>
+<span id="red_noun"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(red_verbs,'red_verb')">Verbs</button>
+<span id="red_verb"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(red_adj,'red_adj')">Adjective</button>
+<span id="red_adj"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(red_phrases,'red_phrase')">Phrase</button>
+<span id="red_phrase"></span>
+</div>
+
+<button class="clear" onclick="clearBox('red')">Clear</button>
+
+</div>
+
+
+
+<!-- BLUE -->
+
+<div class="box blue">
+
+<h2>Random Average Difficulty Words</h2>
+
+<div class="row">
+<button onclick="generate(blue_nouns,'blue_noun')">Nouns</button>
+<span id="blue_noun"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(blue_verbs,'blue_verb')">Verbs</button>
+<span id="blue_verb"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(blue_adj,'blue_adj')">Adjective</button>
+<span id="blue_adj"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(blue_phrases,'blue_phrase')">Phrase</button>
+<span id="blue_phrase"></span>
+</div>
+
+<button class="clear" onclick="clearBox('blue')">Clear</button>
+
+</div>
+
+
+
+<!-- BLACK -->
+
+<div class="box dark">
+
+<h2>Random Easy Difficulty Words</h2>
+
+<div class="row">
+<button onclick="generate(black_nouns,'black_noun')">Nouns</button>
+<span id="black_noun"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(black_verbs,'black_verb')">Verbs</button>
+<span id="black_verb"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(black_adj,'black_adj')">Adjective</button>
+<span id="black_adj"></span>
+</div>
+
+<div class="row">
+<button onclick="generate(black_phrases,'black_phrase')">Phrase</button>
+<span id="black_phrase"></span>
+</div>
+
+<button class="clear" onclick="clearBox('black')">Clear</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

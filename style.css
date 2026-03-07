@@ -1,0 +1,178 @@
+/* PAGE */
+
+body{
+
+font-family: Arial, sans-serif;
+margin:0;
+
+background: linear-gradient(140deg,#111827,#020617);
+
+color:white;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+min-height:100vh;
+
+}
+
+
+/* TITLE */
+
+h1{
+
+margin-bottom:60px;
+
+font-size:36px;
+
+letter-spacing:1px;
+
+}
+
+
+/* MAIN CONTAINER */
+
+.container{
+
+display:flex;
+gap:60px;
+
+}
+
+
+/* RANDOMIZER PANELS */
+
+.box{
+
+width:420px;
+min-height:420px;
+
+padding:35px;
+
+border-radius:16px;
+
+box-shadow:0 25px 50px rgba(0,0,0,0.5);
+
+}
+
+
+/* PANEL TITLES */
+
+.box h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+font-size:22px;
+
+}
+
+
+/* WORD ROW */
+
+.row{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+margin:18px 0;
+
+}
+
+
+/* WORD DISPLAY AREA */
+
+span{
+
+flex:1;
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:bold;
+
+word-break:break-word;
+
+}
+
+
+/* BUTTONS */
+
+button{
+
+width:150px;
+
+padding:12px 14px;
+
+border:none;
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:700;
+
+font-size:15px;
+
+background:#f2f2f2;
+
+color:#222;
+
+transition:0.2s;
+
+}
+
+
+/* BUTTON HOVER */
+
+button:hover{
+
+transform:scale(1.07);
+
+background:white;
+
+}
+
+
+/* CLEAR BUTTON */
+
+.clear{
+
+margin-top:30px;
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+width:170px;
+
+font-size:16px;
+
+}
+
+
+/* PANEL COLORS */
+
+.red{
+
+background:#e74c3c;
+
+}
+
+.blue{
+
+background:#3f8ec2;
+
+}
+
+.dark{
+
+background:#2c2c2c;
+
+}
