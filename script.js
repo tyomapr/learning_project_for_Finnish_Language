@@ -459,7 +459,7 @@ const red_adj = [
 "Vaaja"
 ];
 
-const phrases_red = [
+const red_phrases = [
 "Ulkoa",
 "Pikemminkin",
 "Ylä- ja alamäet",
