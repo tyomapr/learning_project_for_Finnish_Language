@@ -19,6 +19,7 @@ document.getElementById(color+"_phrase").innerText="";
 /* HARD */
 
 const red_nouns = [
+"Virka",
 "Aavikko",
 "Aavistus",
 "Ahma",
@@ -224,6 +225,11 @@ const red_nouns = [
 "Voi",
 "Vuohi",
 "Vääränlaisuus",
+"Sänky",
+"Tyyny",
+"Petauspatja",
+"Sängynpääty",
+"Lakanat"                                                               
 ];
 
 const red_verbs = [
