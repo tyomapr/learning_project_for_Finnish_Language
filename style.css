@@ -176,3 +176,41 @@ background:#3f8ec2;
 background:#2c2c2c;
 
 }
+
+.nav-btn{
+margin-bottom:30px;
+padding:10px 18px;
+background:white;
+color:#111;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+}
+
+.nav-btn:hover{
+transform:scale(1.05);
+}
+
+ul{
+list-style:none;
+padding:0;
+max-height:400px;
+overflow-y:auto;
+}
+
+li{
+margin:8px 0;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.word{
+font-weight:600;
+}
+
+/* checkbox size */
+input[type="checkbox"]{
+transform:scale(1.2);
+cursor:pointer;
+}

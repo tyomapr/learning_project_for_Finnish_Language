@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Word Lists</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>All Vocabulary Lists</h1>
+
+<a href="index.html" class="nav-btn">⬅ Back</a>
+
+<div class="container">
+
+<!-- RED -->
+<div class="box red">
+<h2>Hard Words</h2>
+<button onclick="shuffle('red')">🔀 Shuffle</button>
+<ul id="red_list"></ul>
+</div>
+
+<!-- BLUE -->
+<div class="box blue">
+<h2>Medium Words</h2>
+<button onclick="shuffle('blue')">🔀 Shuffle</button>
+<ul id="blue_list"></ul>
+</div>
+
+<!-- BLACK -->
+<div class="box dark">
+<h2>Easy Words</h2>
+<button onclick="shuffle('black')">🔀 Shuffle</button>
+<ul id="black_list"></ul>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="list.js"></script>
+
+</body>
+</html>
