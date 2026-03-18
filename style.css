@@ -214,3 +214,29 @@ input[type="checkbox"]{
 transform:scale(1.2);
 cursor:pointer;
 }
+
+/* GRAMMAR SECTION BELOW */
+
+.grammar-wrapper{
+width:100%;
+display:flex;
+justify-content:center;
+margin-top:60px;
+}
+
+.grammar-box{
+width:900px;
+max-width:90%;
+}
+
+/* grammar rows */
+
+#grammar_container .row{
+justify-content:flex-start;
+gap:15px;
+}
+
+#grammar_container span{
+text-align:left;
+font-size:18px;
+}
