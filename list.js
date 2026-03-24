@@ -175,7 +175,13 @@ list.splice(index,1);
 if(this.checked){
 item.checked = true;
 list.splice(index,1);
-const lastChecked = list.findLastIndex(w => w.checked);
+let lastChecked = -1;
+for(let i = list.length - 1; i >= 0; i--){
+if(list[i].checked){
+lastChecked = i;
+break;
+}
+}
 if(lastChecked === -1){
 list.unshift(item);
 }else{
@@ -286,7 +292,13 @@ section.items.splice(i,1);
 if(this.checked){
 item.checked = true;
 section.items.splice(i,1);
-const lastChecked = section.items.findLastIndex(w => w.checked);
+let lastChecked = -1;
+for(let j = section.items.length - 1; j >= 0; j--){
+if(section.items[j].checked){
+lastChecked = j;
+break;
+}
+}
 if(lastChecked === -1){
 section.items.unshift(item);
 }else{
