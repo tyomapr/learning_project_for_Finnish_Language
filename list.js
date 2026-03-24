@@ -105,55 +105,52 @@ function renderList(color) {
     `;
     container.appendChild(li);
   });
-
-  attachWordEvents();
 }
 
 // ============================================================================
-// EVENTS - WORD LISTS
+// EVENTS - WORD LISTS (Event Delegation)
 // ============================================================================
 
-function attachWordEvents() {
-  const checkboxes = document.querySelectorAll("ul input[type='checkbox']");
+function setupWordListEvents() {
+  document.addEventListener("change", function (event) {
+    if (!event.target.matches("ul input[type='checkbox']")) return;
 
-  checkboxes.forEach(cb => {
-    cb.addEventListener("change", function () {
-      const color = this.dataset.color;
-      const index = parseInt(this.dataset.index);
-      const list = wordGroups[color];
-      const item = list[index];
+    const checkbox = event.target;
+    const color = checkbox.dataset.color;
+    const index = parseInt(checkbox.dataset.index);
+    const list = wordGroups[color];
+    const item = list[index];
 
-      // Remove item from current position
-      list.splice(index, 1);
+    // Remove item from current position
+    list.splice(index, 1);
 
-      if (this.checked) {
-        item.checked = true;
-        // Find last checked item and add after it
-        let lastCheckedIndex = -1;
-        for (let i = list.length - 1; i >= 0; i--) {
-          if (list[i].checked) {
-            lastCheckedIndex = i;
-            break;
-          }
-        }
-        if (lastCheckedIndex === -1) {
-          list.unshift(item);
-        } else {
-          list.splice(lastCheckedIndex + 1, 0, item);
-        }
-      } else {
-        item.checked = false;
-        // Find first unchecked item and add there
-        const firstUncheckedIndex = list.findIndex(w => !w.checked);
-        if (firstUncheckedIndex === -1) {
-          list.push(item);
-        } else {
-          list.splice(firstUncheckedIndex, 0, item);
+    if (checkbox.checked) {
+      item.checked = true;
+      // Find last checked item and add after it
+      let lastCheckedIndex = -1;
+      for (let i = list.length - 1; i >= 0; i--) {
+        if (list[i].checked) {
+          lastCheckedIndex = i;
+          break;
         }
       }
+      if (lastCheckedIndex === -1) {
+        list.unshift(item);
+      } else {
+        list.splice(lastCheckedIndex + 1, 0, item);
+      }
+    } else {
+      item.checked = false;
+      // Find first unchecked item and add there
+      const firstUncheckedIndex = list.findIndex(w => !w.checked);
+      if (firstUncheckedIndex === -1) {
+        list.push(item);
+      } else {
+        list.splice(firstUncheckedIndex, 0, item);
+      }
+    }
 
-      renderList(color);
-    });
+    renderList(color);
   });
 }
 
@@ -201,61 +198,61 @@ function renderGrammar() {
 
     container.appendChild(sectionDiv);
   });
-
-  attachGrammarEvents();
 }
 
 // ============================================================================
-// EVENTS - GRAMMAR
+// EVENTS - GRAMMAR (Event Delegation)
 // ============================================================================
 
-function attachGrammarEvents() {
-  const checkboxes = document.querySelectorAll("#grammar_container input[type='checkbox']");
+function setupGrammarEvents() {
+  document.addEventListener("change", function (event) {
+    if (!event.target.matches("#grammar_container input[type='checkbox']")) return;
 
-  checkboxes.forEach(cb => {
-    cb.addEventListener("change", function () {
-      const sectionIndex = parseInt(this.dataset.section);
-      const itemIndex = parseInt(this.dataset.index);
-      const section = grammarStructures[sectionIndex];
-      const item = section.items[itemIndex];
+    const checkbox = event.target;
+    const sectionIndex = parseInt(checkbox.dataset.section);
+    const itemIndex = parseInt(checkbox.dataset.index);
+    const section = grammarStructures[sectionIndex];
+    const item = section.items[itemIndex];
 
-      // Remove item from current position
-      section.items.splice(itemIndex, 1);
+    // Remove item from current position
+    section.items.splice(itemIndex, 1);
 
-      if (this.checked) {
-        item.checked = true;
-        // Find last checked item and add after it
-        let lastCheckedIndex = -1;
-        for (let i = section.items.length - 1; i >= 0; i--) {
-          if (section.items[i].checked) {
-            lastCheckedIndex = i;
-            break;
-          }
-        }
-        if (lastCheckedIndex === -1) {
-          section.items.unshift(item);
-        } else {
-          section.items.splice(lastCheckedIndex + 1, 0, item);
-        }
-      } else {
-        item.checked = false;
-        // Find first unchecked item and add there
-        const firstUncheckedIndex = section.items.findIndex(w => !w.checked);
-        if (firstUncheckedIndex === -1) {
-          section.items.push(item);
-        } else {
-          section.items.splice(firstUncheckedIndex, 0, item);
+    if (checkbox.checked) {
+      item.checked = true;
+      // Find last checked item and add after it
+      let lastCheckedIndex = -1;
+      for (let i = section.items.length - 1; i >= 0; i--) {
+        if (section.items[i].checked) {
+          lastCheckedIndex = i;
+          break;
         }
       }
+      if (lastCheckedIndex === -1) {
+        section.items.unshift(item);
+      } else {
+        section.items.splice(lastCheckedIndex + 1, 0, item);
+      }
+    } else {
+      item.checked = false;
+      // Find first unchecked item and add there
+      const firstUncheckedIndex = section.items.findIndex(w => !w.checked);
+      if (firstUncheckedIndex === -1) {
+        section.items.push(item);
+      } else {
+        section.items.splice(firstUncheckedIndex, 0, item);
+      }
+    }
 
-      renderGrammar();
-    });
+    renderGrammar();
   });
 }
 
 // ============================================================================
 // INITIALIZATION
 // ============================================================================
+
+setupWordListEvents();
+setupGrammarEvents();
 
 renderList("red");
 renderList("blue");
