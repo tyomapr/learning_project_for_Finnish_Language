@@ -174,7 +174,13 @@ list.splice(index,1);
 
 if(this.checked){
 item.checked = true;
-list.unshift(item); // move to top
+list.splice(index,1);
+const lastChecked = list.findLastIndex(w => w.checked);
+if(lastChecked === -1){
+list.unshift(item);
+}else{
+list.splice(lastChecked + 1, 0, item);
+}
 }else{
 item.checked = false;
 
@@ -279,7 +285,13 @@ section.items.splice(i,1);
 
 if(this.checked){
 item.checked = true;
+section.items.splice(i,1);
+const lastChecked = section.items.findLastIndex(w => w.checked);
+if(lastChecked === -1){
 section.items.unshift(item);
+}else{
+section.items.splice(lastChecked + 1, 0, item);
+}
 }else{
 item.checked = false;
 
